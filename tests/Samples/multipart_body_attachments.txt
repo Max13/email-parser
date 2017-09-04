@@ -1,0 +1,106 @@
+Delivered-To: contact@example.com
+Received: by 1.2.3.4 with SMTP id j49csp478475qtc;
+        Wed, 30 Aug 2017 02:20:24 -0700 (PDT)
+X-Received: by 5.6.7.8 with SMTP id w207mr9402495qka.334.1507266424933;
+        Wed, 30 Aug 2017 02:20:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1504084824; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qeOom4mat2o0AshvSm2oUYIsWxIuotIooSTIsfMvMTXHTT/hbkz0JFA+zPqUI8nGrW
+         jJh8AokpTV31T3BiTAGx/UVZ4rPEx2/eiV6u3LDXgkiuZvUWi8a89AaR4YpWRj0KP+2Q
+         uN4CgXjVKPZYJHD4bbBGa9zaJqTBSpBKACo4UqsQkTh2NRynjRbUFLtEb+bw21jSugSe
+         v+hJKj331RReMcP/wMwQCiStQ3oLVN/AKGNJ2r2hNgrn/4JL9Mq0Icm8e8QVeX289uBK
+         OqKV/wwsvcPAXpNEsjvHXrZ6/O4kPo/Elgp3aaaUUTvD1BpWdeM5vigfFJ8qQxbCGrZj
+         ovTw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:message-id:from:subject:mime-version:auto-submitted:to
+         :arc-authentication-results;
+        bh=amm4tSxwkTD2tWTk/RecvoGDfJ3PViZCCefemi7OIFU=;
+        b=gFlKjZ+EUmchq8nw+sXGy2Ok38zPkq299H+s0AXDSPupnMaA6G6w6DFYbhczERZBw4
+         2gwTMjvLzLNiM3K4ohWiBIDrf5b3XWT+D09of7eMAC+k9awqTL/V6ajwpWEqWE34XqSX
+         y+IVLGv9QfT7Jyk685dqtTlgURJx6OO0H8/eubtR05VfASQU6F+W86i5OMYO9j4AymTK
+         SNiZlcNmc47eUvi8SvC1YCidypagrR8Hny4xR/HpQWFYxGN7OSqjFKU6o+xVjeCNQkpj
+         F8mnVS10T3hBSCgN/feYLwoRd2+v8LYRGnOG8/v4+DqeP4MM0/oZPJlSytAqt4X6cmCJ
+         4NOw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: best guess record for domain of root@server.example.com designates 10.11.12.13 as permitted sender) smtp.mailfrom=root@server.example.com
+Return-Path: <root@server.example.com>
+Received: from 92.mail.example.net (92.mail.example.net. [10.11.12.13])
+        by mx.google.com with ESMTPS id r206si4899957qke.176.2017.08.31.01.45.24
+        for <contact@example.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 31 Aug 2017 01:45:24 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of root@server.example.com designates 10.11.12.13 as permitted sender) client-ip=10.11.12.13;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: best guess record for domain of root@server.example.com designates 10.11.12.13 as permitted sender) smtp.mailfrom=root@server.example.com
+Received: from root by server.example.com with local (Exim 4.89)
+	(envelope-from <root@server.example.com>)
+	id 1dmzAd-01144N-RX
+	for root@server.example.com; Wed, 30 Aug 2017 11:20:23 +0200
+To: root@server.example.com
+Auto-Submitted: auto-generated
+X-XARF: PLAIN
+Content-Type: multipart/mixed;
+ boundary="csf-1504084823"
+MIME-Version: 1.0
+Subject: abuse report about 99.97.96.95 - 2017-08-30T11:20:23+0200
+From:  <root@server.example.com>
+Message-Id: <E1dmzAd-01144N-RX@server.example.com>
+Date: Wed, 30 Aug 2017 11:20:23 +0200
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - server.example.com
+X-AntiAbuse: Original Domain - server.example.com
+X-AntiAbuse: Originator/Caller UID/GID - [0 0] / [18 22]
+X-AntiAbuse: Sender Address Domain - server.example.com
+X-Get-Message-Sender-Via: server.example.com: sender_ident via received_protocol == local: root/primary_hostname/system user
+X-Authenticated-Sender: server.example.com: root
+X-Source: /usr/local/user/bin/perl
+X-Source-Args: lfd - (child) sending X-ARF email for 99.98.97.96
+X-Source-Dir: /etc/csf
+
+This is a multi-part message in MIME format.
+--csf-1504084823
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=utf-8
+
+The IP address 99.98.97.96 (XX/CNTRY/-) was found attacking sshd on server.example.com 5 times in the last 300 seconds.
+
+Attached is an X-ARF report (see http://www.x-arf.org/specification.html) and the original log report that triggered this block.
+
+Abuse Contact for 99.98.97.96: [abuse@example.co.uk]
+
+The Abuse Contact of this report was provided by the Abuse Contact DB by abusix.com. abusix.com does not maintain the content of the database. All information which we pass out, derives from the RIR databases and is processed for ease of use. If you want to change or report non working abuse contacts please contact the appropriate RIR. If you have any further question, contact abusix.com directly via email (info@abusix.com). Information about the Abuse Contact Database can be found here:
+
+https://abusix.com/global-reporting/abuse-contact-db
+
+abusix.com is neither responsible nor liable for the content or accuracy of this message.
+
+--csf-1504084823
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="report.txt"
+Content-Type: text/plain; charset=utf8; name="report.txt";
+
+Reported-From: root@server.example.com
+Report-ID: 1504084823@server.example.com
+Category: abuse
+Report-Type: login-attack
+Service: sshd
+User-Agent: csf v10.22
+Date: 2017-08-30T11:20:23+0200
+Source: 99.98.97.96
+Source-Type: ipv4
+Attachment: text/plain
+Schema-URL: https://download.configserver.com/abuse_login-attack_0.2.json
+
+--csf-1504084823
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="logfile.log"
+Content-Type: text/plain; charset=utf8; name="logfile.log";
+
+Aug 30 11:17:06 pandora sshd[13571]: Did not receive identification string from 99.98.97.96
+Aug 30 11:17:06 pandora sshd[13572]: Did not receive identification string from 99.98.97.96
+Aug 30 11:17:06 pandora sshd[13574]: Did not receive identification string from 99.98.97.96
+Aug 30 11:20:19 pandora sshd[15563]: Invalid user sshvpn from 99.98.97.96
+Aug 30 11:20:19 pandora sshd[15566]: Invalid user sshvpn from 99.98.97.96
+
+
+--csf-1504084823--

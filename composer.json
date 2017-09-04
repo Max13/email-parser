@@ -1,0 +1,26 @@
+{
+    "name": "max13/email-parser",
+    "description": "Efficiently parse e-mail and attachments",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "parse", "email", "rfc822"],
+    "authors": [
+        {
+            "name": "Adnan RIHAN",
+            "email": "adnan@rihan.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4" : {
+            "MX\\" : "src/"
+        }
+    },
+    "require": {
+        "max13/base-model": "^1.0",
+        "max13/base-parser": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "larapack/dd": "1.*"
+    }
+}
